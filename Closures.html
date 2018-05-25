@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+     <input type="submit" onclick="enclosure()" value="CLOSURE Functions" /><br />
+        <div id="#div1">   </div><br />
+
+            <!--  CLOSURE FUNCTION -->
+    <script type="text/javascript">
+
+        var enclosure = function () {
+
+            function showName(exam, code) {
+                var nameIntro = "Passing the ";
+
+                //enclosure is a function written inside another function.
+                //makeFullName is inside showName
+                function makeFullName() { // This is an enclosure
+                    return nameIntro + exam + " " + code;
+                }
+                return makeFullName();
+            }
+            //passing parameters to the ENCLOSURE FUNCTION and print
+            document.getElementById("#div1").innerHTML= (showName("HTML, CSS3 & JavaScript", "70-480 EXAM"));
+            /*
+            An enclosure has access to
+                 its own variables
+                 outer functions variables, as well as its parameters 
+                 global variables
+
+            */
+
+            /*
+            No parameters were passed to the makeFullName function yet it was able to print the name accurately . 
+            The function keyword is being used to define the enclosure
+
+            */
+
+        }
+    </script>
+    </body>
+</html>
